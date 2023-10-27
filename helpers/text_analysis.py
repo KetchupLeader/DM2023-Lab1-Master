@@ -1,7 +1,7 @@
 """ Utility function for doing analysis on emotion datasets """
 from collections import Counter, OrderedDict
 import plotly.graph_objs as go
-#from wordcloud import WordCloud
+from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 def get_tokens_and_frequency(token_list):
@@ -98,7 +98,7 @@ def get_trace(X_pca, data, category, color):
         text=data[data.apply(lambda x: True if x==category else False).tolist()]
     )
     return trace
-'''
+
 def plot_word_cloud(text):
     """ Generate word cloud given some input text doc """
     word_cloud = WordCloud().generate(text)
@@ -106,4 +106,4 @@ def plot_word_cloud(text):
     plt.imshow(word_cloud, interpolation='bilinear')
     plt.axis("off")
     plt.show()
-'''
+
